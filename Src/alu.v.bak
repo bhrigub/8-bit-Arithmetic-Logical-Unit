@@ -1,0 +1,51 @@
+module alu1 (output reg [7:0] c, output reg borrow,xor1,and1,or1,nor1,nand1,carry,equal, less, greater,input [7:0] a,b,input [2:0] choice);
+/*
+Design an 8-bit ALU. Features include:
+a. Two 8-bit inputs A and B.
+b. One 8-bit output C.
+c. Five 1-bit outputs Borrow, Carry, Equal, less (A<B) and more (A>B).
+d. Supports Addition, Subtraction, XOR, AND, NOR, NAND and Comparison.
+Also Display Inputs, Outputs and Operation performed on transcript. Output (8-bit) will be zero for comparison operation. Use case equality for comparison of A and B.
+*/
+reg [8:0] val;
+
+
+always @ *
+begin
+$display("Choose the required action:\n1.Addition\n2.Subtraction\n3.Xor of two inputs\n4.And of two inputs\n5.Nor of two inputs\n6.Nand of two inputs\n7.Compare two inputs\n");
+case (choice-1)
+3'd0: begin 
+val=(a+b);
+carry=val[8];
+c=val[7:0];
+end
+1:
+begin
+val=(a-b);
+borrow=val[8];
+c=val[7:0];
+end
+2:
+begin
+xor1=a^b;
+end
+3: 
+and1=a&b;
+4: 
+or1=a|b;
+5:
+nor1=~(a|b);
+6:
+nand1=~(a&b);
+7:
+begin
+if (a>b)
+greater=1'b1;
+else if (a<b)
+less=1'b1;
+else
+equal=1'b1;
+end
+endcase
+end
+endmodule

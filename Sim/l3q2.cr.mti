@@ -1,0 +1,15 @@
+C:/Users/Admin/Desktop/VERILOG/Lab_Work/B/Lab3/Q2/Src/alu.v {1 {vlog -work work -vopt {C:\Users\Admin\Desktop\VERILOG\Lab_Work\B\Lab3\Q2\Src\alu.v}
+QuestaSim vlog 10.1d Compiler 2012.11 Nov  1 2012
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} C:/Users/Admin/Desktop/VERILOG/Lab_Work/B/Lab3/Q2/Src/tb_ALU.v {1 {vlog -work work -vopt {C:\Users\Admin\Desktop\VERILOG\Lab_Work\B\Lab3\Q2\Src\tb_ALU.v}
+QuestaSim vlog 10.1d Compiler 2012.11 Nov  1 2012
+-- Compiling module tb_alu
+
+Top level modules:
+	tb_alu
+
+} {} {}}

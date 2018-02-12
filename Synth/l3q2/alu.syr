@@ -1,0 +1,589 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: alu.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "alu.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "alu"
+Output Format                      : NGC
+Target Device                      : xc4vlx25-10-ff668
+
+---- Source Options
+Top Module Name                    : alu
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 32
+Number of Regional Clock Buffers   : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../../Src/alu.v" in library work
+Module <alu> compiled
+No errors in compilation
+Analysis of file <"alu.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <alu> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <alu>.
+WARNING:Xst:2323 - "../../Src/alu.v" line 21: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 21: Parameter 3 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 21: Parameter 4 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 21: Parameter 5 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 21: Parameter 6 is not constant in call of system task $display.
+"../../Src/alu.v" line 21: $display : IN ADDITION a=%b b=%b alu_control=%d carry=%b, c=%b
+WARNING:Xst:2323 - "../../Src/alu.v" line 25: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 25: Parameter 3 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 25: Parameter 4 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 25: Parameter 5 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 25: Parameter 6 is not constant in call of system task $display.
+"../../Src/alu.v" line 25: $display : IN SUBTRACTION a=%b b=%b alu_control=%d borrow=%b c=%b
+WARNING:Xst:2323 - "../../Src/alu.v" line 29: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 29: Parameter 3 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 29: Parameter 4 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 29: Parameter 5 is not constant in call of system task $display.
+"../../Src/alu.v" line 29: $display : IN XOR a=%b b=%b alu_control=%d c=%b
+WARNING:Xst:2323 - "../../Src/alu.v" line 33: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 33: Parameter 3 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 33: Parameter 4 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 33: Parameter 5 is not constant in call of system task $display.
+"../../Src/alu.v" line 33: $display : IN AND a=%b b=%b alu_control=%d  c=%b
+WARNING:Xst:2323 - "../../Src/alu.v" line 37: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 37: Parameter 3 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 37: Parameter 4 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 37: Parameter 5 is not constant in call of system task $display.
+"../../Src/alu.v" line 37: $display : IN NOR a=%b b=%b alu_control=%d  c=%b
+WARNING:Xst:2323 - "../../Src/alu.v" line 41: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 41: Parameter 3 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 41: Parameter 4 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 41: Parameter 5 is not constant in call of system task $display.
+"../../Src/alu.v" line 41: $display : IN NAND a=%b b=%b alu_control=%d  c=%b
+WARNING:Xst:2323 - "../../Src/alu.v" line 56: Parameter 2 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 56: Parameter 3 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 56: Parameter 4 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 56: Parameter 5 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 56: Parameter 6 is not constant in call of system task $display.
+WARNING:Xst:2323 - "../../Src/alu.v" line 56: Parameter 7 is not constant in call of system task $display.
+"../../Src/alu.v" line 56: $display : IN COMP a=%b b=%b alu_control=%d more=%b less=%b equal=%b 
+"../../Src/alu.v" line 65: $display : Invalid ALU signal
+WARNING:Xst:2323 - "../../Src/alu.v" line 66: Parameter 2 is not constant in call of system task $display.
+"../../Src/alu.v" line 66: $display : Invalid Selection alu_control=%d
+Module <alu> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <alu>.
+    Related source file is "../../Src/alu.v".
+WARNING:Xst:737 - Found 8-bit latch for signal <c>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <carry>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <borrow>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <more>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <less>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 1-bit latch for signal <equal>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 8-bit adder carry out for signal <AUX_1$addsub0000>.
+    Found 8-bit comparator greater for signal <old_less_8$cmp_gt0000> created at line 48.
+    Found 8-bit comparator greater for signal <old_more_7$cmp_gt0000> created at line 44.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <alu> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 8-bit adder carry out                                 : 1
+ 9-bit subtractor                                      : 1
+# Latches                                              : 6
+ 1-bit latch                                           : 5
+ 8-bit latch                                           : 1
+# Comparators                                          : 2
+ 8-bit comparator greater                              : 2
+# Xors                                                 : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 8-bit adder carry out                                 : 1
+ 9-bit subtractor                                      : 1
+# Latches                                              : 6
+ 1-bit latch                                           : 5
+ 8-bit latch                                           : 1
+# Comparators                                          : 2
+ 8-bit comparator greater                              : 2
+# Xors                                                 : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <alu> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block alu, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : alu.ngr
+Top Level Output File Name         : alu
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 32
+
+Cell Usage :
+# BELS                             : 133
+#      GND                         : 1
+#      LUT2                        : 33
+#      LUT3                        : 20
+#      LUT4                        : 13
+#      MUXCY                       : 32
+#      MUXF5                       : 8
+#      MUXF6                       : 8
+#      VCC                         : 1
+#      XORCY                       : 17
+# FlipFlops/Latches                : 13
+#      LD                          : 13
+# IO Buffers                       : 32
+#      IBUF                        : 19
+#      OBUF                        : 13
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 4vlx25ff668-10 
+
+ Number of Slices:                       39  out of  10752     0%  
+ Number of Slice Flip Flops:              3  out of  21504     0%  
+ Number of 4 input LUTs:                 66  out of  21504     0%  
+ Number of IOs:                          32
+ Number of bonded IOBs:                  32  out of    448     7%  
+    IOB Flip Flops:                      10
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+more_not0001(borrow_not0001111:O)  | NONE(*)(equal)         | 3     |
+borrow_not0001(borrow_not00011:O)  | NONE(*)(borrow)        | 1     |
+carry_not0001(carry_not00011:O)    | NONE(*)(carry)         | 1     |
+c_not0001(c_not00011:O)            | NONE(*)(c_0)           | 8     |
+-----------------------------------+------------------------+-------+
+(*) These 4 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -10
+
+   Minimum period: 1.230ns (Maximum Frequency: 812.876MHz)
+   Minimum input arrival time before clock: 4.347ns
+   Maximum output required time after clock: 4.807ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'more_not0001'
+  Clock period: 1.230ns (frequency: 812.876MHz)
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Delay:               1.230ns (Levels of Logic = 1)
+  Source:            equal (LATCH)
+  Destination:       equal (LATCH)
+  Source Clock:      more_not0001 falling
+  Destination Clock: more_not0001 falling
+
+  Data Path: equal to equal
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               2   0.473   0.540  equal (equal_OBUF)
+     LUT4:I3->O            1   0.195   0.000  equal_mux00001 (equal_mux0000)
+     LD:D                      0.022          equal
+    ----------------------------------------
+    Total                      1.230ns (0.690ns logic, 0.540ns route)
+                                       (56.1% logic, 43.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'more_not0001'
+  Total number of paths / destination ports: 129 / 3
+-------------------------------------------------------------------------
+Offset:              3.757ns (Levels of Logic = 11)
+  Source:            b<0> (PAD)
+  Destination:       equal (LATCH)
+  Destination Clock: more_not0001 falling
+
+  Data Path: b<0> to equal
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   0.965   0.622  b_0_IBUF (b_0_IBUF)
+     LUT2:I0->O            1   0.195   0.000  Mcompar_old_more_7_cmp_gt0000_lut<0> (Mcompar_old_more_7_cmp_gt0000_lut<0>)
+     MUXCY:S->O            1   0.366   0.000  Mcompar_old_more_7_cmp_gt0000_cy<0> (Mcompar_old_more_7_cmp_gt0000_cy<0>)
+     MUXCY:CI->O           1   0.044   0.000  Mcompar_old_more_7_cmp_gt0000_cy<1> (Mcompar_old_more_7_cmp_gt0000_cy<1>)
+     MUXCY:CI->O           1   0.044   0.000  Mcompar_old_more_7_cmp_gt0000_cy<2> (Mcompar_old_more_7_cmp_gt0000_cy<2>)
+     MUXCY:CI->O           1   0.044   0.000  Mcompar_old_more_7_cmp_gt0000_cy<3> (Mcompar_old_more_7_cmp_gt0000_cy<3>)
+     MUXCY:CI->O           1   0.044   0.000  Mcompar_old_more_7_cmp_gt0000_cy<4> (Mcompar_old_more_7_cmp_gt0000_cy<4>)
+     MUXCY:CI->O           1   0.044   0.000  Mcompar_old_more_7_cmp_gt0000_cy<5> (Mcompar_old_more_7_cmp_gt0000_cy<5>)
+     MUXCY:CI->O           1   0.044   0.000  Mcompar_old_more_7_cmp_gt0000_cy<6> (Mcompar_old_more_7_cmp_gt0000_cy<6>)
+     MUXCY:CI->O           3   0.369   0.756  Mcompar_old_more_7_cmp_gt0000_cy<7> (Mcompar_old_more_7_cmp_gt0000_cy<7>)
+     LUT4:I0->O            1   0.195   0.000  more_mux00001 (more_mux0000)
+     LD:D                      0.022          more
+    ----------------------------------------
+    Total                      3.757ns (2.380ns logic, 1.378ns route)
+                                       (63.3% logic, 36.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'borrow_not0001'
+  Total number of paths / destination ports: 27 / 1
+-------------------------------------------------------------------------
+Offset:              3.724ns (Levels of Logic = 12)
+  Source:            a<0> (PAD)
+  Destination:       borrow (LATCH)
+  Destination Clock: borrow_not0001 falling
+
+  Data Path: a<0> to borrow
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   0.965   0.622  a_0_IBUF (a_0_IBUF)
+     LUT2:I0->O            1   0.195   0.000  Msub__AUX_2_lut<0> (Msub__AUX_2_lut<0>)
+     MUXCY:S->O            1   0.366   0.000  Msub__AUX_2_cy<0> (Msub__AUX_2_cy<0>)
+     MUXCY:CI->O           1   0.044   0.000  Msub__AUX_2_cy<1> (Msub__AUX_2_cy<1>)
+     MUXCY:CI->O           1   0.044   0.000  Msub__AUX_2_cy<2> (Msub__AUX_2_cy<2>)
+     MUXCY:CI->O           1   0.044   0.000  Msub__AUX_2_cy<3> (Msub__AUX_2_cy<3>)
+     MUXCY:CI->O           1   0.044   0.000  Msub__AUX_2_cy<4> (Msub__AUX_2_cy<4>)
+     MUXCY:CI->O           1   0.044   0.000  Msub__AUX_2_cy<5> (Msub__AUX_2_cy<5>)
+     MUXCY:CI->O           1   0.044   0.000  Msub__AUX_2_cy<6> (Msub__AUX_2_cy<6>)
+     MUXCY:CI->O           0   0.044   0.000  Msub__AUX_2_cy<7> (Msub__AUX_2_cy<7>)
+     XORCY:CI->O           1   0.360   0.688  Msub__AUX_2_xor<8> (_AUX_2<8>)
+     LUT4:I1->O            1   0.195   0.000  borrow_mux00001 (borrow_mux0000)
+     LD:D                      0.022          borrow
+    ----------------------------------------
+    Total                      3.724ns (2.415ns logic, 1.310ns route)
+                                       (64.8% logic, 35.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'carry_not0001'
+  Total number of paths / destination ports: 27 / 1
+-------------------------------------------------------------------------
+Offset:              3.689ns (Levels of Logic = 11)
+  Source:            a<0> (PAD)
+  Destination:       carry (LATCH)
+  Destination Clock: carry_not0001 falling
+
+  Data Path: a<0> to carry
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   0.965   0.622  a_0_IBUF (a_0_IBUF)
+     LUT2:I0->O            1   0.195   0.000  Madd_AUX_1_addsub0000_lut<0> (Madd_AUX_1_addsub0000_lut<0>)
+     MUXCY:S->O            1   0.366   0.000  Madd_AUX_1_addsub0000_cy<0> (Madd_AUX_1_addsub0000_cy<0>)
+     MUXCY:CI->O           1   0.044   0.000  Madd_AUX_1_addsub0000_cy<1> (Madd_AUX_1_addsub0000_cy<1>)
+     MUXCY:CI->O           1   0.044   0.000  Madd_AUX_1_addsub0000_cy<2> (Madd_AUX_1_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.044   0.000  Madd_AUX_1_addsub0000_cy<3> (Madd_AUX_1_addsub0000_cy<3>)
+     MUXCY:CI->O           1   0.044   0.000  Madd_AUX_1_addsub0000_cy<4> (Madd_AUX_1_addsub0000_cy<4>)
+     MUXCY:CI->O           1   0.044   0.000  Madd_AUX_1_addsub0000_cy<5> (Madd_AUX_1_addsub0000_cy<5>)
+     MUXCY:CI->O           1   0.044   0.000  Madd_AUX_1_addsub0000_cy<6> (Madd_AUX_1_addsub0000_cy<6>)
+     MUXCY:CI->O           1   0.370   0.688  Madd_AUX_1_addsub0000_cy<7> (Madd_AUX_1_index0000)
+     LUT4:I1->O            1   0.195   0.000  carry_mux00001 (carry_mux0000)
+     LD:D                      0.022          carry
+    ----------------------------------------
+    Total                      3.689ns (2.380ns logic, 1.310ns route)
+                                       (64.5% logic, 35.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'c_not0001'
+  Total number of paths / destination ports: 280 / 8
+-------------------------------------------------------------------------
+Offset:              4.347ns (Levels of Logic = 13)
+  Source:            a<0> (PAD)
+  Destination:       c_7 (LATCH)
+  Destination Clock: c_not0001 falling
+
+  Data Path: a<0> to c_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   0.965   0.622  a_0_IBUF (a_0_IBUF)
+     LUT2:I0->O            1   0.195   0.000  Madd_AUX_1_addsub0000_lut<0> (Madd_AUX_1_addsub0000_lut<0>)
+     MUXCY:S->O            1   0.366   0.000  Madd_AUX_1_addsub0000_cy<0> (Madd_AUX_1_addsub0000_cy<0>)
+     MUXCY:CI->O           1   0.045   0.000  Madd_AUX_1_addsub0000_cy<1> (Madd_AUX_1_addsub0000_cy<1>)
+     MUXCY:CI->O           1   0.045   0.000  Madd_AUX_1_addsub0000_cy<2> (Madd_AUX_1_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.045   0.000  Madd_AUX_1_addsub0000_cy<3> (Madd_AUX_1_addsub0000_cy<3>)
+     MUXCY:CI->O           1   0.045   0.000  Madd_AUX_1_addsub0000_cy<4> (Madd_AUX_1_addsub0000_cy<4>)
+     MUXCY:CI->O           1   0.045   0.000  Madd_AUX_1_addsub0000_cy<5> (Madd_AUX_1_addsub0000_cy<5>)
+     MUXCY:CI->O           1   0.044   0.000  Madd_AUX_1_addsub0000_cy<6> (Madd_AUX_1_addsub0000_cy<6>)
+     XORCY:CI->O           1   0.360   0.585  Madd_AUX_1_addsub0000_xor<7> (AUX_1_addsub0000<7>)
+     LUT3:I1->O            1   0.195   0.000  c_mux0000<7>5 (c_mux0000<7>5)
+     MUXF5:I0->O           1   0.382   0.000  c_mux0000<7>_f5 (c_mux0000<7>_f5)
+     MUXF6:I0->O           1   0.388   0.000  c_mux0000<7>_f6 (c_mux0000<7>)
+     LD:D                      0.022          c_7
+    ----------------------------------------
+    Total                      4.347ns (3.140ns logic, 1.207ns route)
+                                       (72.2% logic, 27.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'carry_not0001'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.790ns (Levels of Logic = 1)
+  Source:            carry (LATCH)
+  Destination:       carry (PAD)
+  Source Clock:      carry_not0001 falling
+
+  Data Path: carry to carry
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.473   0.360  carry (carry_OBUF)
+     OBUF:I->O                 3.957          carry_OBUF (carry)
+    ----------------------------------------
+    Total                      4.790ns (4.430ns logic, 0.360ns route)
+                                       (92.5% logic, 7.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'more_not0001'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              4.807ns (Levels of Logic = 1)
+  Source:            more (LATCH)
+  Destination:       more (PAD)
+  Source Clock:      more_not0001 falling
+
+  Data Path: more to more
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               2   0.473   0.377  more (more_OBUF)
+     OBUF:I->O                 3.957          more_OBUF (more)
+    ----------------------------------------
+    Total                      4.807ns (4.430ns logic, 0.377ns route)
+                                       (92.2% logic, 7.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'borrow_not0001'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.790ns (Levels of Logic = 1)
+  Source:            borrow (LATCH)
+  Destination:       borrow (PAD)
+  Source Clock:      borrow_not0001 falling
+
+  Data Path: borrow to borrow
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.473   0.360  borrow (borrow_OBUF)
+     OBUF:I->O                 3.957          borrow_OBUF (borrow)
+    ----------------------------------------
+    Total                      4.790ns (4.430ns logic, 0.360ns route)
+                                       (92.5% logic, 7.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'c_not0001'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              4.790ns (Levels of Logic = 1)
+  Source:            c_7 (LATCH)
+  Destination:       c<7> (PAD)
+  Source Clock:      c_not0001 falling
+
+  Data Path: c_7 to c<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.473   0.360  c_7 (c_7)
+     OBUF:I->O                 3.957          c_7_OBUF (c<7>)
+    ----------------------------------------
+    Total                      4.790ns (4.430ns logic, 0.360ns route)
+                                       (92.5% logic, 7.5% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.28 secs
+ 
+--> 
+
+Total memory usage is 213668 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   39 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+
